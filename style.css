@@ -2,7 +2,7 @@
 :root {
   --text:#222;
   --muted:#666;
-  --link:#0b6bcb;
+  --link:#1d6ce2;
   --bg:#f8f9fa;
   --card:#fff;
   --border:#e6e6e6;
@@ -23,3 +23,15 @@ nav a:hover{text-decoration:underline}
 .highlights{margin-top:20px;background:var(--card);padding:16px 20px;border:1px solid var(--border);border-radius:12px}
 .pub-list, .course-list{padding-left:18px}
 footer{text-align:center;color:var(--muted);margin-top:32px}
+
+/* Ensure all links are the same color, visited or not */
+a:link,
+a:visited {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
