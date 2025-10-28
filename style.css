@@ -1,0 +1,25 @@
+
+:root {
+  --text:#222;
+  --muted:#666;
+  --link:#0b6bcb;
+  --bg:#f8f9fa;
+  --card:#fff;
+  --border:#e6e6e6;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6;background:var(--bg);color:var(--text)}
+.container{max-width:900px;margin:0 auto;padding:24px}
+header{text-align:center;margin:8px 0 12px 0}
+.site-title{margin:0 0 8px 0;font-size:28px}
+nav a{margin:0 10px;text-decoration:none;color:var(--link);padding:4px 6px;border-radius:8px}
+nav a[aria-current="page"]{outline:1px solid var(--border);background:var(--card)}
+nav a:hover{text-decoration:underline}
+.skip-link{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;background:#fff;padding:8px;border:1px solid var(--border)}
+.intro{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;background:var(--card);padding:16px 20px;border:1px solid var(--border);border-radius:12px}
+.profile-pic{width:120px;height:120px;object-fit:cover;border-radius:50%}
+.highlights{margin-top:20px;background:var(--card);padding:16px 20px;border:1px solid var(--border);border-radius:12px}
+.pub-list, .course-list{padding-left:18px}
+footer{text-align:center;color:var(--muted);margin-top:32px}
