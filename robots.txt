@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nicolas-fliess.com/sitemap.xml
