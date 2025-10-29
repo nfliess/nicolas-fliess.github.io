@@ -29,13 +29,15 @@ nav a:hover{text-decoration:underline}
 .profile-pic {
   width: 160px;
   height: 160px;
-  object-fit: cover;                /* keeps zoom balanced */
-  object-position: top;             /* focuses on your face */
-  border-radius: 50%;               /* round shape */
-  border: 2px solid var(--border);  /* subtle outline */
+  object-fit: contain;             /* show full image instead of cropping */
+  object-position: center;         /* centers the portrait */
+  border-radius: 50%;              /* keeps it round */
+  border: 2px solid var(--border);
   background-color: #fff;
+  padding: 4px;                    /* small inner margin for clean circle */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 
 .highlights{margin-top:20px;background:var(--card);padding:16px 20px;border:1px solid var(--border);border-radius:12px}
 .pub-list, .course-list{padding-left:18px}
