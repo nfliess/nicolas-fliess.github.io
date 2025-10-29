@@ -27,16 +27,17 @@ nav a:hover{text-decoration:underline}
 }
 
 .profile-pic {
-  width: 160px;
-  height: 160px;
-  object-fit: contain;             /* show full image instead of cropping */
-  object-position: center;         /* centers the portrait */
-  border-radius: 50%;              /* keeps it round */
-  border: 2px solid var(--border);
+  width: 180px;                   /* slightly larger circle */
+  height: auto;                   /* auto height for natural scaling */
+  aspect-ratio: 1 / 1;            /* keeps it perfectly square */
+  border-radius: 50%;             /* round shape */
+  object-fit: contain;            /* shows the full image, no crop */
   background-color: #fff;
-  padding: 4px;                    /* small inner margin for clean circle */
+  border: 2px solid var(--border);
+  padding: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 
 
 .highlights{margin-top:20px;background:var(--card);padding:16px 20px;border:1px solid var(--border);border-radius:12px}
