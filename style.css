@@ -18,14 +18,23 @@ nav a[aria-current="page"]{outline:1px solid var(--border);background:var(--card
 nav a:hover{text-decoration:underline}
 .skip-link{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 .skip-link:focus{position:static;width:auto;height:auto;background:#fff;padding:8px;border:1px solid var(--border)}
-.intro{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;background:var(--card);padding:16px 20px;border:1px solid var(--border);border-radius:12px}
+.intro {
+  display: grid;
+  grid-template-columns: 160px 1fr; /* wider column for the photo */
+  gap: 24px;                        /* adds breathing room */
+  align-items: start;
+  margin-top: 24px;                 /* extra space from header */
+}
+
 .profile-pic {
-  width: 180px;                 /* slightly wider */
-  height: auto;                 /* keeps proportions natural */
-  border-radius: 12px;          /* gentle rounded corners */
-  object-fit: cover;            /* fills box neatly */
-  object-position: center top;  /* keeps face centered */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+  width: 160px;
+  height: 160px;
+  object-fit: cover;                /* keeps zoom balanced */
+  object-position: top;             /* focuses on your face */
+  border-radius: 50%;               /* round shape */
+  border: 2px solid var(--border);  /* subtle outline */
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .highlights{margin-top:20px;background:var(--card);padding:16px 20px;border:1px solid var(--border);border-radius:12px}
