@@ -26,17 +26,20 @@ nav a:hover{text-decoration:underline}
   margin-top: 24px;                 /* extra space from header */
 }
 
-.profile-pic {
-  width: 220px;             /* adjust to your liking */
-  height: auto;             /* keep natural aspect ratio */
-  border-radius: 12px;      /* softly rounded corners */
-  object-fit: contain;      /* show full image */
-  object-position: center;  /* center the photo */
+img.profile-pic {
+  width: 160px;               /* smaller image size */
+  height: auto;
+  border-radius: 12px !important;
+  object-fit: contain;
+  object-position: center;
   border: 2px solid var(--border);
   background-color: #fff;
   padding: 0;
+  margin-right: 20px;         /* space between photo and text */
+  float: left;                /* makes text wrap nicely */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 
 
 
