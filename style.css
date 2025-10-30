@@ -27,15 +27,16 @@ nav a:hover{text-decoration:underline}
 }
 
 .profile-pic {
-  width: 200px;               /* you can adjust this size */
-  height: auto;               /* keeps natural proportions */
-  border-radius: 16px;        /* rounded rectangle */
-  object-fit: contain;        /* ensures no cropping */
+  width: 220px;              /* adjust size as you like */
+  height: auto;              /* keeps original proportions */
+  border-radius: 12px;       /* gentle curve on corners */
+  object-fit: contain;       /* shows full image, no cropping */
   border: 2px solid var(--border);
-  padding: 4px;
   background-color: #fff;
+  padding: 0;                /* remove any white ring */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 
 
 
