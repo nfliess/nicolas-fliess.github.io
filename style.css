@@ -27,7 +27,7 @@ nav a:hover{text-decoration:underline}
 }
 
 img.profile-pic {
-  width: 160px;               /* smaller image size */
+  width: 160px;
   height: auto;
   border-radius: 12px !important;
   object-fit: contain;
@@ -35,10 +35,12 @@ img.profile-pic {
   border: 2px solid var(--border);
   background-color: #fff;
   padding: 0;
-  margin-right: 20px;         /* space between photo and text */
-  float: left;                /* makes text wrap nicely */
+  margin-right: 20px;        /* space between photo and text */
+  float: left;               /* places photo beside text */
+  vertical-align: top;       /* aligns the image top edge with text */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 
 
 
