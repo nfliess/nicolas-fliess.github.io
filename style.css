@@ -31,7 +31,7 @@ img.profile-pic {
   height: 180px;               /* must match width for a perfect circle */
   border-radius: 50%;          /* makes it circular */
   object-fit: cover;           /* fills the circle nicely */
-  object-position: center 25%; /* shifts visible area down */
+  object-position: center 35%; /* shifts visible area down */
   border: 2px solid var(--border);
   background-color: #fff;
   padding: 4px;                /* small white ring around photo */
