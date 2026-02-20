@@ -85,3 +85,48 @@ a:focus {
     justify-self: start;     /* center photo within the grid */
   }
 }
+
+
+
+
+
+
+.contact-form {
+  max-width: 560px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.contact-form button {
+  margin-top: 14px;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  text-decoration: underline;
+}
+
+.contact-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
