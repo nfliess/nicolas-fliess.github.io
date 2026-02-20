@@ -63,3 +63,25 @@ a:hover,
 a:focus {
   text-decoration: underline;
 }
+
+
+
+
+
+/* Mobile-only: stack photo above text and use full width */
+@media (max-width: 600px) {
+  .container { padding: 16px; }
+
+  .intro {
+    grid-template-columns: 1fr; /* one column on phone */
+    gap: 16px;
+  }
+
+  img.profile-pic {
+    float: none;              /* disable desktop float */
+    margin-right: 0;          /* remove side gap */
+    width: 140px;
+    height: 140px;
+    justify-self: start;     /* center photo within the grid */
+  }
+}
