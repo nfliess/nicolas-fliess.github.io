@@ -130,3 +130,9 @@ a:focus {
   font-size: 0.95rem;
   margin-top: 10px;
 }
+
+.privacy-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
