@@ -12,12 +12,27 @@
       <h1 class="site-title">Nicolas Fliess</h1>
     </header>
 
-    <main>
-      <h2>Thank you</h2>
-      <p>Your message has been sent successfully.</p>
-      <p>I will respond as soon as possible.</p>
-      <p><a href="index.html">Return to homepage</a></p>
-    </main>
+<main id="thankyou-content" style="display:none;">
+  <h2>Thank you</h2>
+  <p>Your message has been sent successfully.</p>
+  <p>I will respond as soon as possible.</p>
+  <p><a href="index.html">Return to homepage</a></p>
+</main>
+
+<main id="error-content" style="display:none;">
+  <h2>Access restricted</h2>
+  <p>This page is only available after submitting the contact form.</p>
+  <p><a href="contact.html">Go to contact page</a></p>
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("sent") === "true") {
+    document.getElementById("thankyou-content").style.display = "block";
+  } else {
+    document.getElementById("error-content").style.display = "block";
+  }
+</script>
 
     <footer>
       © Nicolas Fliess
