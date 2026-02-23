@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nicolas Fliess — Political Scientist and Migration Scholar</title>
-  <title>Nicolas Fliess – Political Scientist and Migration Scholar</title>
+
   <meta name="description" content="Official website of Nicolas Fliess, political scientist and migration scholar. Research on political parties, migration, political behaviour, and state policies.">
   <meta name="keywords" content="Nicolas Fliess, political science, migration, transnational politics, political parties, migration, voting from abroad, emigrant, emigrants, emigration, Europe, Latin America, Andean politics, postdoctoral researcher, political transnationalism">
   <meta name="author" content="Nicolas Fliess">
     
   <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
 
 
   <link rel="canonical" href="https://nicolas-fliess.com/" />
@@ -22,56 +22,53 @@
   <meta property="og:url" content="https://nicolas-fliess.com/" />
   <meta property="og:image" content="https://nicolas-fliess.com/photo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <!-- GA4 placeholder -->
+</head>
 
-  <div id="cookie-banner">
-  <p>
-    This website uses Google Analytics to analyze traffic.
-  </p>
+
+  
+  <!-- Cookie Banner -->
+<!-- Cookie Banner -->
+<div id="cookie-banner">
+  <p>This website uses Google Analytics to analyze traffic.</p>
   <div class="cookie-buttons">
-    <button onclick="setConsent('accepted')">Accept</button>
-    <button onclick="setConsent('declined')">Decline</button>
+    <button type="button" onclick="setConsent('accepted')">Accept</button>
+    <button type="button" onclick="setConsent('declined')">Decline</button>
   </div>
 </div>
-  
-  <script>
-function loadAnalytics() {
-  const script1 = document.createElement("script");
-  script1.async = true;
-  script1.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
-  document.head.appendChild(script1);
 
-  script1.onload = function() {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      'anonymize_ip': true
-    });
-  };
-}
+<script>
+  function loadAnalytics() {
+    const script1 = document.createElement("script");
+    script1.async = true;
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+    document.head.appendChild(script1);
 
-function setConsent(value) {
-  localStorage.setItem("cookie_consent", value);
-  document.getElementById("cookie-banner").style.display = "none";
-  if (value === "accepted") {
-    loadAnalytics();
+    script1.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    };
   }
-}
 
-document.addEventListener("DOMContentLoaded", function() {
-  const consent = localStorage.getItem("cookie_consent");
-
-  if (consent === "accepted") {
-    loadAnalytics();
-  } else if (!consent) {
-    document.getElementById("cookie-banner").style.display = "flex";
+  function setConsent(value) {
+    localStorage.setItem("cookie_consent", value);
+    document.getElementById("cookie-banner").style.display = "none";
+    if (value === "accepted") loadAnalytics();
   }
-});
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const consent = localStorage.getItem("cookie_consent");
+    if (consent === "accepted") {
+      loadAnalytics();
+    } else if (!consent) {
+      document.getElementById("cookie-banner").style.display = "flex";
+    }
+  });
 </script>
 
   
-</head>
+
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="container">
