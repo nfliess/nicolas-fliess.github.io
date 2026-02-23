@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Impressum – Nicolas Fliess</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="site-title">Nicolas Fliess</h1>
+    </header>
+
+    <main>
+      <h2>Impressum</h2>
+
+      <p>
+        Nicolas Fliess<br>
+        Universität Bonn<br>
+        Maximilianstraße 22<br>
+        53111 Bonn<br>
+        Germany
+      </p>
+
+      <p>
+        Contact via the contact form on this website.
+      </p>
+
+      <p>
+        Responsible for content according to § 18 Abs. 2 MStV:<br>
+        Nicolas Fliess (address as above)
+      </p>
+    </main>
+
+    <footer>
+      <p>
+        <small>
+          &copy; <span id="year"></span> Nicolas Fliess · 
+          <a href="impressum.html">Impressum</a> · 
+          <a href="datenschutz.html">Privacy Policy</a>
+        </small>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
