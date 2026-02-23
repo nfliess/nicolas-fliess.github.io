@@ -83,59 +83,62 @@
     <a href="datenschutz.html">Privacy Policy</a>
   </small>
 </p>
-    </footer>
+
+          </footer>
   </div>
 
+  <!-- Year Script -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
-
-<!-- Cookie Banner -->
-<div id="cookie-banner" style="display:none;">
-  <div class="cookie-buttons">
-    <button type="button" onclick="acceptCookies()">Accept</button>
-    <button type="button" onclick="declineCookies()">Decline</button>
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" style="display:none;">
+    <p>This website uses Google Analytics.</p>
+    <div class="cookie-buttons">
+      <button type="button" onclick="acceptCookies()">Accept</button>
+      <button type="button" onclick="declineCookies()">Decline</button>
+    </div>
   </div>
-</div>
 
-<script>
-  const GA_ID = "G-2KJWZC1GQ3";
+  <!-- Google Analytics (Consent-Based Loading) -->
+  <script>
+    const GA_ID = "G-2KJWZC1GQ3";
 
-  function loadGA() {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(script);
+    function loadGA() {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(script);
 
-    script.onload = function () {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', GA_ID, { anonymize_ip: true });
-    };
-  }
-
-  function acceptCookies() {
-    localStorage.setItem("cookie_consent", "accepted");
-    document.getElementById("cookie-banner").style.display = "none";
-    loadGA();
-  }
-
-  function declineCookies() {
-    localStorage.setItem("cookie_consent", "declined");
-    document.getElementById("cookie-banner").style.display = "none";
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const consent = localStorage.getItem("cookie_consent");
-    if (consent === "accepted") {
-      loadGA();
-    } else if (!consent) {
-      document.getElementById("cookie-banner").style.display = "flex";
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', GA_ID, { anonymize_ip: true });
+      };
     }
-  });
-</script>
-  
+
+    function acceptCookies() {
+      localStorage.setItem("cookie_consent", "accepted");
+      document.getElementById("cookie-banner").style.display = "none";
+      loadGA();
+    }
+
+    function declineCookies() {
+      localStorage.setItem("cookie_consent", "declined");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const consent = localStorage.getItem("cookie_consent");
+      if (consent === "accepted") {
+        loadGA();
+      } else if (!consent) {
+        document.getElementById("cookie-banner").style.display = "flex";
+      }
+    });
+  </script>
+
 </body>
 </html>
