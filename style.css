@@ -181,3 +181,16 @@ a:focus {
   background: var(--link);
   color: white;
 }
+
+@media (max-width: 600px) {
+  #cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .cookie-buttons {
+    justify-content: center;
+  }
+}
