@@ -113,6 +113,9 @@
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    script.onerror = function () {
+  console.log("GA script failed to load:", script.src);
+  };
     document.head.appendChild(script);
 
     script.onload = function () {
