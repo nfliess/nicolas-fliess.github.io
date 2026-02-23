@@ -198,7 +198,7 @@ a:focus {
 
   /* Compact size */
   max-width: 520px;
-  width: calc(100% - 20px);
+  width: calc(100% - 40px);
 
   z-index: 9999;
 }
