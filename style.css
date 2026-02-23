@@ -136,3 +136,39 @@ a:focus {
   color: var(--muted);
   margin-top: 12px;
 }
+
+
+#cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+  z-index: 9999;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#cookie-banner button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+}
+
+#cookie-banner button:hover {
+  background: var(--link);
+  color: white;
+}
