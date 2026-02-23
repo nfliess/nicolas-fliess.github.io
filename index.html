@@ -23,16 +23,54 @@
   <meta property="og:image" content="https://nicolas-fliess.com/photo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- GA4 placeholder -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
 
-   gtag('config', 'G-XXXXXXXXXX', {
-     'anonymize_ip': true
-   });
-  </script>
+  <div id="cookie-banner">
+  <p>
+    This website uses Google Analytics to analyze traffic.
+  </p>
+  <div class="cookie-buttons">
+    <button onclick="setConsent('accepted')">Accept</button>
+    <button onclick="setConsent('declined')">Decline</button>
+  </div>
+</div>
+  
+  <script>
+function loadAnalytics() {
+  const script1 = document.createElement("script");
+  script1.async = true;
+  script1.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+  document.head.appendChild(script1);
+
+  script1.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      'anonymize_ip': true
+    });
+  };
+}
+
+function setConsent(value) {
+  localStorage.setItem("cookie_consent", value);
+  document.getElementById("cookie-banner").style.display = "none";
+  if (value === "accepted") {
+    loadAnalytics();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const consent = localStorage.getItem("cookie_consent");
+
+  if (consent === "accepted") {
+    loadAnalytics();
+  } else if (!consent) {
+    document.getElementById("cookie-banner").style.display = "flex";
+  }
+});
+</script>
+
+  
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
