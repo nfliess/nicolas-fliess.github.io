@@ -104,7 +104,12 @@
   <!-- Google Analytics (Consent-Based Loading) -->
 <script>
   let gaLoaded = false;
-  const GA_ID = "G-2KJWZC1GQ3";
+
+  // Use THIS to load gtag.js (from Google’s “Install manually” box)
+  const TAG_ID = "G-NZXZ847WWL";
+
+  // Use THIS to send data to your actual GA4 web stream
+  const MEASUREMENT_ID = "G-2KJWZC1GQ3";
 
   function loadGA() {
     if (gaLoaded) return;
@@ -112,17 +117,14 @@
 
     const script = document.createElement("script");
     script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    script.onerror = function () {
-  console.log("GA script failed to load:", script.src);
-  };
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + TAG_ID;
     document.head.appendChild(script);
 
     script.onload = function () {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', GA_ID, { anonymize_ip: true });
+      gtag('config', MEASUREMENT_ID, { anonymize_ip: true });
     };
   }
 
