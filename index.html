@@ -25,17 +25,54 @@
 </head>
 
 
-  
-  <!-- Cookie Banner -->
 <!-- Cookie Banner -->
-<div id="cookie-banner">
-  <p>This website uses Google Analytics to analyze traffic.</p>
+<div id="cookie-banner" style="display:none;">
   <div class="cookie-buttons">
-    <button type="button" onclick="setConsent('accepted')">Accept</button>
-    <button type="button" onclick="setConsent('declined')">Decline</button>
+    <button type="button" onclick="acceptCookies()">Accept</button>
+    <button type="button" onclick="declineCookies()">Decline</button>
   </div>
 </div>
 
+<script>
+  const GA_ID = "G-2KJWZC1GQ3";
+
+  function loadGA() {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    };
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("cookie_consent", "accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGA();
+  }
+
+  function declineCookies() {
+    localStorage.setItem("cookie_consent", "declined");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const consent = localStorage.getItem("cookie_consent");
+
+    if (consent === "accepted") {
+      loadGA();
+    } else if (!consent) {
+      document.getElementById("cookie-banner").style.display = "flex";
+    }
+  });
+</script>
+
+  
 <script>
   function loadAnalytics() {
     const script1 = document.createElement("script");
