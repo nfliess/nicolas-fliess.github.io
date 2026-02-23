@@ -20,24 +20,24 @@ nav a:hover{text-decoration:underline}
 .skip-link:focus{position:static;width:auto;height:auto;background:#fff;padding:8px;border:1px solid var(--border)}
 .intro {
   display: grid;
-  grid-template-columns: 160px 1fr; /* wider column for the photo */
-  gap: 24px;                        /* adds breathing room */
+  grid-template-columns: 160px 1fr; 
+  gap: 24px;                        
   align-items: start;
-  margin-top: 24px;                 /* extra space from header */
+  margin-top: 24px;                 
 }
 
 img.profile-pic {
-  width: 180px;                /* adjust size to your liking */
-  height: 180px;               /* must match width for a perfect circle */
-  border-radius: 50%;          /* makes it circular */
-  object-fit: cover;           /* fills the circle nicely */
-  object-position: center 55%; /* shifts visible area down */
+  width: 180px;                
+  height: 180px;               
+  border-radius: 50%;          
+  object-fit: cover;           
+  object-position: center 55%; 
   border: 2px solid var(--border);
   background-color: #fff;
-  padding: 4px;                /* small white ring around photo */
+  padding: 4px;                
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  margin-right: 20px;          /* space between photo and text */
-  float: left;                 /* photo beside About Me text */
+  margin-right: 20px;          
+  float: left;                 
 }
 
 
@@ -73,16 +73,16 @@ a:focus {
   .container { padding: 16px; }
 
   .intro {
-    grid-template-columns: 1fr; /* one column on phone */
+    grid-template-columns: 1fr; 
     gap: 16px;
   }
 
   img.profile-pic {
-    float: none;              /* disable desktop float */
-    margin-right: 0;          /* remove side gap */
+    float: none;              
+    margin-right: 0;         
     width: 140px;
     height: 140px;
-    justify-self: start;     /* center photo within the grid */
+    justify-self: start;     
   }
 }
 
@@ -117,12 +117,14 @@ a:focus {
   padding: 10px 16px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: var(--card);
+  background: var(--link);
+  color: white;              
+  font-size: 1rem;           
   cursor: pointer;
 }
 
 .contact-form button:hover {
-  text-decoration: underline;
+  opacity: 0.9;
 }
 
 .contact-note {
