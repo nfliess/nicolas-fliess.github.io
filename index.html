@@ -22,91 +22,11 @@
   <meta property="og:url" content="https://nicolas-fliess.com/" />
   <meta property="og:image" content="https://nicolas-fliess.com/photo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+
 </head>
-
-
-<!-- Cookie Banner -->
-<div id="cookie-banner" style="display:none;">
-  <div class="cookie-buttons">
-    <button type="button" onclick="acceptCookies()">Accept</button>
-    <button type="button" onclick="declineCookies()">Decline</button>
-  </div>
-</div>
-
-<script>
-  const GA_ID = "G-2KJWZC1GQ3";
-
-  function loadGA() {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(script);
-
-    script.onload = function () {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', GA_ID, { anonymize_ip: true });
-    };
-  }
-
-  function acceptCookies() {
-    localStorage.setItem("cookie_consent", "accepted");
-    document.getElementById("cookie-banner").style.display = "none";
-    loadGA();
-  }
-
-  function declineCookies() {
-    localStorage.setItem("cookie_consent", "declined");
-    document.getElementById("cookie-banner").style.display = "none";
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const consent = localStorage.getItem("cookie_consent");
-
-    if (consent === "accepted") {
-      loadGA();
-    } else if (!consent) {
-      document.getElementById("cookie-banner").style.display = "flex";
-    }
-  });
-</script>
-
-  
-<script>
-  function loadAnalytics() {
-    const script1 = document.createElement("script");
-    script1.async = true;
-    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-2KJWZC1GQ3";
-    document.head.appendChild(script1);
-
-    script1.onload = function () {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2KJWZC1GQ3', { anonymize_ip: true });
-    };
-  }
-
-  function setConsent(value) {
-    localStorage.setItem("cookie_consent", value);
-    document.getElementById("cookie-banner").style.display = "none";
-    if (value === "accepted") loadAnalytics();
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const consent = localStorage.getItem("cookie_consent");
-    if (consent === "accepted") {
-      loadAnalytics();
-    } else if (!consent) {
-      document.getElementById("cookie-banner").style.display = "flex";
-    }
-  });
-</script>
-
-  
-
 <body>
+
+
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="container">
     <header>
@@ -169,5 +89,53 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="display:none;">
+  <div class="cookie-buttons">
+    <button type="button" onclick="acceptCookies()">Accept</button>
+    <button type="button" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+
+<script>
+  const GA_ID = "G-2KJWZC1GQ3";
+
+  function loadGA() {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    };
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("cookie_consent", "accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGA();
+  }
+
+  function declineCookies() {
+    localStorage.setItem("cookie_consent", "declined");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const consent = localStorage.getItem("cookie_consent");
+    if (consent === "accepted") {
+      loadGA();
+    } else if (!consent) {
+      document.getElementById("cookie-banner").style.display = "flex";
+    }
+  });
+</script>
+  
 </body>
 </html>
