@@ -206,13 +206,13 @@ a:focus {
 #cookie-banner p {
   margin: 0;
   font-size: 0.9rem;
+  white-space: nowrap;         
 }
 
 .cookie-buttons {
   display: flex;
   gap: 8px;
 
-  /* Center buttons under the text */
   justify-content: center;
   width: 100%;
 }
