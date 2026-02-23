@@ -102,43 +102,47 @@
   </div>
 
   <!-- Google Analytics (Consent-Based Loading) -->
-  <script>
-    const GA_ID = "G-2KJWZC1GQ3";
+<script>
+  let gaLoaded = false;
+  const GA_ID = "G-2KJWZC1GQ3";
 
-    function loadGA() {
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-      document.head.appendChild(script);
+  function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
 
-      script.onload = function () {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', GA_ID, { anonymize_ip: true });
-      };
-    }
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
 
-    function acceptCookies() {
-      localStorage.setItem("cookie_consent", "accepted");
-      document.getElementById("cookie-banner").style.display = "none";
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    };
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("cookie_consent", "accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGA();
+  }
+
+  function declineCookies() {
+    localStorage.setItem("cookie_consent", "declined");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const consent = localStorage.getItem("cookie_consent");
+    if (consent === "accepted") {
       loadGA();
+    } else if (!consent) {
+      document.getElementById("cookie-banner").style.display = "flex";
     }
-
-    function declineCookies() {
-      localStorage.setItem("cookie_consent", "declined");
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const consent = localStorage.getItem("cookie_consent");
-      if (consent === "accepted") {
-        loadGA();
-      } else if (!consent) {
-        document.getElementById("cookie-banner").style.display = "flex";
-      }
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
