@@ -138,6 +138,7 @@ a:focus {
 }
 
 
+
 #cookie-banner {
   position: fixed;
   bottom: 20px;
@@ -146,26 +147,34 @@ a:focus {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 10px 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   display: none;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 420px;
+  align-items: center;
+  gap: 16px;
+  max-width: 900px;      /* makes it longer */
+  width: calc(100% - 40px);
   z-index: 9999;
+}
+
+#cookie-banner p {
+  margin: 0;
+  font-size: 0.9rem;
+  white-space: nowrap;   /* keeps text in one line */
 }
 
 .cookie-buttons {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 #cookie-banner button {
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--bg);
   cursor: pointer;
+  font-size: 0.85rem;
 }
 
 #cookie-banner button:hover {
