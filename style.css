@@ -151,8 +151,9 @@ a:focus {
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   display: none;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
-  max-width: 900px;      /* makes it longer */
+  max-width: 900px;
   width: calc(100% - 40px);
   z-index: 9999;
 }
@@ -160,7 +161,6 @@ a:focus {
 #cookie-banner p {
   margin: 0;
   font-size: 0.9rem;
-  white-space: nowrap;   /* keeps text in one line */
 }
 
 .cookie-buttons {
