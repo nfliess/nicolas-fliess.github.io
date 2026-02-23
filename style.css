@@ -13,9 +13,48 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,s
 .container{max-width:900px;margin:0 auto;padding:24px}
 header{text-align:center;margin:8px 0 12px 0}
 .site-title{margin:0 0 8px 0;font-size:28px}
-nav a{margin:0 10px;text-decoration:none;color:var(--link);padding:4px 6px;border-radius:8px}
+
+nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:var(--link);
+  padding:4px 6px;
+  border-radius:8px;
+}
 nav a[aria-current="page"]{outline:1px solid var(--border);background:var(--card)}
 nav a:hover{text-decoration:underline}
+
+/* Keep navigation in one row (mobile-friendly) */
+header nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* Addition 1: hide scrollbar (still swipeable) */
+  scrollbar-width: none; /* Firefox */
+}
+header nav::-webkit-scrollbar { display: none; } /* WebKit */
+
+/* Override link spacing inside the header nav row */
+header nav a {
+  margin: 0;           /* overrides the 0 10px above inside header nav */
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+/* Optional: slightly tighter on small screens */
+@media (max-width: 600px) {
+  /* Addition 2: smaller gap on very small screens */
+  header nav { gap: 6px; }
+
+  header nav a {
+    padding: 4px 4px;
+    font-size: 0.95rem;
+  }
+}
+
 .skip-link{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 .skip-link:focus{position:static;width:auto;height:auto;background:#fff;padding:8px;border:1px solid var(--border)}
 .intro {
